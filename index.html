@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ziyodulla Med | Professional Portal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #004d40;
+            --gold: #c5a059;
+            --text: #2c3e50;
+            --light-gold: #fdfaf4;
+            --bg-overlay: rgba(255, 255, 255, 0.96);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            /* ORQA FON RASMI SHU YERDA */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('fon.jpg') no-repeat center center fixed;
+            background-size: cover;
+            padding: 80px 10px 40px; /* Tepadan joy tashladik rasm uchun */
+        }
+
+        /* Burchakdagi doira rasm (Sizning rasmingiz) */
+        .corner-profile {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid var(--gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            object-fit: cover;
+            background: white;
+            transition: 0.3s;
+        }
+        .corner-profile:hover { transform: scale(1.1); }
+
+        .main-card {
+            background: var(--bg-overlay);
+            width: 100%;
+            max-width: 480px;
+            border: 1px solid var(--gold);
+            border-radius: 15px;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            padding: 35px;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-section { text-align: center; margin-bottom: 30px; border-bottom: 1px double var(--gold); padding-bottom: 20px; }
+        .site-brand { font-size: 11px; font-weight: 700; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        h1 { font-size: 24px; color: var(--primary); margin: 0; font-weight: 800; }
+
+        .section-title {
+            font-size: 13px; font-weight: 700; color: var(--primary);
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 5px; margin: 30px 0 15px;
+            text-transform: uppercase; letter-spacing: 1px;
+            display: flex; align-items: center; gap: 8px;
+        }
+
+        /* Ma'lumotlar gridi */
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 13px; }
+        .info-item { background: var(--light-gold); padding: 12px; border-radius: 6px; border: 0.5px solid #e0e0e0; }
+        .info-item b { color: var(--gold); display: block; font-size: 10px; text-transform: uppercase; margin-bottom: 3px; }
+
+        /* Kalkulyator */
+        .calc-container {
+            background: var(--primary);
+            color: white;
+            padding: 25px;
+            border-radius: 12px;
+            margin-top: 15px;
+            box-shadow: 0 10px 20px rgba(0,77,64,0.2);
+        }
+        .calc-inputs { display: flex; gap: 12px; margin-bottom: 15px; }
+        .calc-inputs input {
+            width: 100%; padding: 12px; border-radius: 8px; border: none; outline: none; font-family: inherit; font-size: 14px;
+        }
+        .calc-btn {
+            width: 100%; padding: 14px; background: var(--gold); color: white;
+            border: none; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .calc-btn:hover { background: #b08d4a; }
+        #bmi-res { 
+            margin-top: 20px; text-align: center; font-size: 14px; line-height: 1.5;
+            padding: 10px; background: rgba(255,255,255,0.1); border-radius: 8px; display: none; 
+        }
+
+        /* Endokrinologiya & STT */
+        .edu-box {
+            font-size: 13px; line-height: 1.6; color: #444;
+            background: #fff; padding: 15px; border: 1px solid #f0f0f0; border-radius: 10px;
+        }
+        .edu-box p { margin: 8px 0; display: flex; align-items: flex-start; gap: 10px; }
+        .edu-box i { color: var(--gold); margin-top: 4px; }
+
+        /* Sertifikatlar */
+        .cert-row { display: flex; justify-content: space-around; padding: 10px 0; }
+        .cert-card { text-align: center; font-size: 10px; font-weight: 700; color: var(--primary); width: 30%; }
+        .cert-card img { width: 35px; margin-bottom: 8px; filter: grayscale(20%); }
+
+        .contact-btn {
+            display: block; text-align: center; padding: 16px;
+            background: var(--primary); color: white; text-decoration: none;
+            font-size: 13px; font-weight: 700; margin-top: 15px; border-radius: 8px;
+            transition: 0.3s; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .contact-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+
+        .footer { text-align: center; font-size: 10px; color: #999; margin-top: 40px; letter-spacing: 3px; font-weight: 600; }
+    </style>
+</head>
+<body>
+
+    <img src="rasm.jpg" alt="Ziyodulla" class="corner-profile">
+
+    <div class="main-card">
+        <div class="header-section">
+            <span class="site-brand">Ziyodulla Med</span>
+            <h1>Baxriddinov Ziyodulla</h1>
+            <p style="font-size: 13px; color: #666; margin-top: 8px; font-weight: 500;">Bo'lajak Shifokor-Endokrinolog</p>
+        </div>
+
+        <div class="section-title"><i class="fas fa-user-circle"></i> Umumiy ma'lumotlar</div>
+        <div class="info-grid">
+            <div class="info-item"><b>Yashash joyi</b>Samarqand</div>
+            <div class="info-item"><b>Yoshi</b>19 yosh</div>
+            <div class="info-item"><b>Yo'nalishi</b>Tibbiyot</div>
+            <div class="info-item"><b>Qiziqishlar</b>Falsafa & Psixologiya</div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-heartbeat"></i> BMI Kalkulyatori</div>
+        <div class="calc-container">
+            <div class="calc-inputs">
+                <input type="number" id="h" placeholder="Bo'y (sm)">
+                <input type="number" id="w" placeholder="Vazn (kg)">
+            </div>
+            <button class="calc-btn" onclick="checkBMI()">Hisoblash</button>
+            <div id="bmi-res"></div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-shield-virus"></i> Endokrinolog maslahati</div>
+        <div class="edu-box">
+            <p><i class="fas fa-walking"></i> <b>Semizlikka qarshi:</b> Kunlik 10 000 qadam gormonal fonni me'yorlashtiradi.</p>
+            <p><i class="fas fa-apple-alt"></i> <b>STT:</b> To'g'ri ovqatlanish - kelajakdagi sog'lom gormonlar garovi.</p>
+            <p><i class="fas fa-dumbbell"></i> <b>Sport:</b> Haftada 3 marta faol mashg'ulot metabolizmni tezlashtiradi.</p>
+        </div>
+
+        <div class="section-title"><i class="fas fa-medal"></i> Sertifikatlar</div>
+        <div class="cert-row">
+            <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/3022/3022561.png"><br>KIMYO</div>
+            <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/892/892926.png"><br>BIOLOGIYA</div>
+            <div class="cert-card"><img src="https://cdn-icons-png.flaticon.com/512/197/197408.png"><br>RUS TILI</div>
+        </div>
+
+        <div class="section-title"><i class="fas fa-flag"></i> Oliy Maqsad</div>
+        <div style="font-size: 13px; line-height: 1.7; color: #555; background: #fff; padding: 15px; border-radius: 8px; border-left: 4px solid var(--gold);">
+            "Samarqand Davlat Tibbiyot Universiteti talabasi bo'lish va dunyo darajasidagi yetuk shifokor bo'lib yetishish."
+        </div>
+
+        <div style="margin-top: 30px;">
+            <a href="https://t.me/Thiseren" class="contact-btn"><i class="fab fa-telegram-plane"></i> TELEGRAM BOG'LANISH</a>
+            <a href="tel:+998939418090" class="contact-btn" style="background: none; border: 1.5px solid var(--primary); color: var(--primary);">
+                <i class="fas fa-phone"></i> 93 941 80 90
+            </a>
+        </div>
+
+        <div class="footer">ZIYODULLA MED • 2026 • SAMARQAND</div>
+    </div>
+
+    <script>
+        function checkBMI() {
+            let height = document.getElementById('h').value / 100;
+            let weight = document.getElementById('w').value;
+            let res = document.getElementById('bmi-res');
+            
+            if(height > 0 && weight > 0) {
+                let bmi = (weight / (height * height)).toFixed(1);
+                res.style.display = "block";
+                let msg = "";
+                if(bmi < 18.5) msg = "Vazn kam. To'g'ri ovqatlanish rejimi kerak.";
+                else if(bmi < 25) msg = "Ideal vazn! Salomatligingiz joyida.";
+                else if(bmi < 30) msg = "Ortiqcha vazn. Sport bilan shug'ullanish tavsiya etiladi.";
+                else msg = "Semizlik. Shifokor ko'rigi zarur!";
+                res.innerHTML = `Sizning BMI: <b>${bmi}</b><br><span style="color:var(--gold)">${msg}</span>`;
+            } else {
+                alert("Iltimos, barcha maydonlarni to'ldiring!");
+            }
+        }
+    </script>
+</body>
+</html>
